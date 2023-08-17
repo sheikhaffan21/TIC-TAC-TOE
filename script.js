@@ -59,9 +59,9 @@ Array.from(boxes).forEach(element => {
     element.addEventListener('click', () => {
         if (isgameover == false) {
             if (boxtext.innerText === '') {
+                turnmusic.play()
                 boxtext.innerText = turn;
                 turn = changeTurn();
-                turnmusic.play()
                 checkWin();
                 if (isgameover == false) {
                     document.querySelector('.info').innerText = "Turn for " + turn;
