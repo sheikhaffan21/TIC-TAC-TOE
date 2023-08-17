@@ -87,10 +87,6 @@ reset.addEventListener('click', () => {
         mplay.innerText = "Play Music"
         music.pause();
         musicplaying = false;
-    }else if(mplay.innerText === "Play Music"){
-        mplay.innerText="Pause Music"
-        music.play();
-        musicplaying=true;
     }
 })
 
