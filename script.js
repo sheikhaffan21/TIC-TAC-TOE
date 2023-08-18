@@ -27,9 +27,12 @@ const checkWin = () => {
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won!!!!"
             isgameover = true;
             gameovermusic.play()
-            music.pause()
-            document.querySelector(".mplay").innerText = "Play Music"
-            musicplaying = false
+            mplay = document.querySelector(".mplay");
+            if (musicplaying == true) {
+                mplay.innerText = "Play Music"
+                music.pause();
+
+            }
         }
     })
     if ((boxtext[0].innerText !== "") &&
@@ -46,10 +49,9 @@ const checkWin = () => {
         document.querySelector('.info').innerText = "Press Reset Button!"
         gamehalt.play();
         mplay = document.querySelector(".mplay");
-        if (mplay.innerText === "Pause Music") {
+        if (musicplaying == true) {
             mplay.innerText = "Play Music"
             music.pause();
-            musicplaying = false;
         }
     }
 }
@@ -83,10 +85,9 @@ reset.addEventListener('click', () => {
     isgameover = false
     document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
     mplay = document.querySelector(".mplay");
-    if (mplay.innerText === "Pause Music") {
-        mplay.innerText = "Play Music"
-        music.pause();
-        musicplaying = false;
+    if (musicplaying == true) {
+        mplay.innerText = "Pause Music"
+        music.play();
     }
 })
 
