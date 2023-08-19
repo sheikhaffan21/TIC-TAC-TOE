@@ -61,8 +61,8 @@ Array.from(boxes).forEach(element => {
     element.addEventListener('click', () => {
         if (isgameover == false) {
             if (boxtext.innerText === '') {
-                turnmusic.play()
                 boxtext.innerText = turn;
+                turnmusic.play()
                 turn = changeTurn();
                 checkWin();
                 if (isgameover == false) {
