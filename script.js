@@ -6,10 +6,12 @@ let turn = "X";
 let isgameover = false;
 let musicplaying = false;
 
+//turn changing function
 const changeTurn = () => {
     return turn === "X" ? "O" : "X"
 }
 
+//winner checking function
 const checkWin = () => {
     let boxtext = document.getElementsByClassName('boxtext');
     let wins = [
@@ -35,6 +37,8 @@ const checkWin = () => {
             }
         }
     })
+
+    //game halt checking
     if ((boxtext[0].innerText !== "") &&
         (boxtext[1].innerText !== "") &&
         (boxtext[2].innerText !== "") &&
@@ -55,6 +59,8 @@ const checkWin = () => {
         }
     }
 }
+
+//game logic
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element => {
     let boxtext = element.querySelector('.boxtext');
@@ -75,6 +81,7 @@ Array.from(boxes).forEach(element => {
     })
 });
 
+//reset button
 reset = document.querySelector('.reset');
 reset.addEventListener('click', () => {
     let boxtext = document.querySelectorAll('.boxtext');
@@ -91,6 +98,7 @@ reset.addEventListener('click', () => {
     }
 })
 
+//play pause music button
 mplay = document.querySelector(".mplay");
 mplay.addEventListener('click', function () {
     if (musicplaying == false) {
